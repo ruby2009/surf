@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CheesUs</title>
+    <%= favicon_link_tag 'cheese-fav.png' %>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="jumbotron">
+        <div class="bg">
+          <nav class="navbar">
+
+<!-- Brand and toggle get grouped for better mobile display -->
+           <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+
+             <%= link_to root_path, class: "navbar-brand" do %>
+               <%= image_tag "cheese.svg", class: "img-responsive" %>
+             <% end %>
+             <!-- <%= link_to "Chirpy", root_path, class: "navbar-brand" %> -->
+             <!-- <a class="navbar-brand" href="#">Chirpy</a> -->
+           </div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+
+            <form class="navbar-form navbar-right">
+
+              <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="Search">
+                <i class="glyphicon glyphicon-search form-control-feedback"></i>
+              </div>
+            </form>
+
+
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav">
+               <li><%= link_to "Authors", authors_path %></li>
+               <li><a href="#">About</a></li>
+             </ul>
+
+
+           </div><!-- /.navbar-collapse -->
+         </nav>
+         <h1 class="text-center">CheesUs!</h1>
+           <h4 class="text-center">A fascinating cheese blog...</h4>
+        </div><!-- /.container-fluid -->
+   </div>
+
+
+  <div class="container">
+
+    <%= yield %>
+
+  </div>
+
+  <div class="recent">
+    <div class="row">
+      <div class="col-xs-12" id="line">
+
+      </div>
+    </div>
+    <h2>Most Recent Cheeses</h2>
+    <div class="row">
+      <div class="hover">
+
+
+      <% @cheeses.take(4).each do |cheese| %>
+        <div class="col-md-3 col-xs-6">
+          <%= link_to cheese, class: "btn" do %>
+            <%= image_tag cheese.picture, class: "img-responsive center-block" %>
+            <h3><%=simple_format cheese.name %></h3>
+          <% end %>
+
+        </div>
+      <% end %>
+    </div>
+    </div>
+  </div>
+
+    <footer>
+      <div class="navbar navbar-default">
+        <div class="container-fluid">
+            <%= link_to root_path, class: "navbar-brand" do %>
+              <%= image_tag "iron-yard-logo.svg", class: "img-responsive" %>
+            <% end %>
+            <p class="navbar-text">The Ironyard Copyright 2013, All Rights Reserved</p>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Nav Item 1</a></li>
+              <li><a href="#">Nav Item 2</a></li>
+              <li><a href="#">Nav Item 3</a></li>
+              <li><a href="#">Nav Item 4</a></li>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  </body>
+</html>
