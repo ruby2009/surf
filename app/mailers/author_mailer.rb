@@ -1,6 +1,6 @@
 class AuthorMailer < ApplicationMailer
 
-  def signup(user)
+  def signup(author)
     @author = author
     mail(to: 'bgcall@indiana.edu', subject: "Welcome to CheesUs!")
   end
