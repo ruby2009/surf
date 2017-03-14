@@ -42,11 +42,15 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
+                            <li><%= link_to "Join", new_author_path %></li>
                             <li><%= link_to "Authors", authors_path %></li>
                             <li>
                                 <a href="#">About</a>
                             </li>
                         </ul>
+                        <div class="navbar-left" id="navbarleft">
+                          <%= link_to "New Cheese!", new_cheese_path, class: "btn btn-danger" %>
+                        </div>
 
                     </div>
                     <!-- /.navbar-collapse -->
