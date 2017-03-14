@@ -6,7 +6,7 @@
 
         <strong>
             <%= link_to @cheese.author do %>
-            <%= image_tag @cheese.author.avatar, class: "media-object img-circle" %>
+              <%= image_tag @cheese.author.avatar, class: "media-object img-circle" %>
             <% end %>
             <%= link_to @cheese.author.name, @cheese.author, class: "btn btn-default" %>
             <%= link_to "#{time_ago_in_words(@cheese.created_at)} ago", cheese %>
@@ -17,6 +17,8 @@
 
         <div class="row row-centered">
             <div class="btons">
+                <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+                  <%= link_to "Edit Post", edit_cheese_path(@cheese), class: "btn btn-default" %>
                 <button type="button" class="btn btn-default">
                     <span aria-hidden="true" class="glyphicon glyphicon-comment"></span>Read Comments</button>
                 <button class="btn btn-default" type="button">
@@ -30,8 +32,8 @@
     <div class="col-md-4 col-xs-3" id="right">
         <div class="author">
 
-            <%= link_to @cheese.author do %>
-            <%= image_tag @cheese.author.avatar, class: "media-object img-circle" %>
+            <%= link_to cheese.author do %>
+            <%= image_tag cheese.author.avatar, class: "media-object img-circle" %>
             <% end %>
 
             <h4>

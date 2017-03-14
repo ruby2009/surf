@@ -14,11 +14,12 @@
                 <%= link_to @cheese.author.name, @cheese.author, class: "btn btn-default" %>
                 <%= link_to "#{time_ago_in_words(@cheese.created_at)} ago"%></strong>
 
-            <% post = @cheese.description.split('", "') %>
-            <%= simple_format post.join("\n\n") %>
+            <%= simple_format @cheese.description %>
 
             <div class="row row-centered">
                 <div class="btons">
+                    <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+                        <%= link_to "Edit Post", edit_cheese_path(@cheese), class: "btn btn-default" %>
                     <button type="button" class="btn btn-default">
                         <span aria-hidden="true" class="glyphicon glyphicon-comment"></span>Read Comments</button>
                     <button class="btn btn-default" type="button">

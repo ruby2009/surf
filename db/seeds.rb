@@ -11,13 +11,13 @@
   author = Author.create!(
     name: Faker::Name.name_with_middle,
     bio: Faker::HarryPotter.quote,
-    avatar: Faker::LoremPixel.image("200x200", false, 'people')
+    avatar: Faker::LoremPixel.image("200x200", false, 'people', rand(1..10))
   )
 
   3.times do
     author.cheeses.create!(
       name: Faker::Space.moon,
-      description: Faker::Hipster.paragraphs(6),
+      description: Faker::Hipster.paragraphs(6).join("\n\n"),
       picture: Faker::LoremPixel.image("400x400", false, 'food', rand(1..10)),
       created_at: rand(1..200).days.ago
     )

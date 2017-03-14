@@ -1,0 +1,11 @@
+<div class="media">
+  <div class="media-left">
+    <%= link_to cheese.author do %>
+      <%= image_tag cheese.author.avatar, class: "media-object img-circle" %>
+    <% end %>
+  </div>
+  <div class="media-body">
+    <%= simple_format cheese.description %>
+    <strong>Written by <%= link_to cheese.author.name, cheese.author, class: "btn btn-default" %> <%= link_to "#{time_ago_in_words(cheese.created_at)} ago", cheese %> :: <%= button_to "EXTERMINATE!!", cheese, method: :delete, class: "btn btn-danger" %></strong>
+  </div>
+</div>
