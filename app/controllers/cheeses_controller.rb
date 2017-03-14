@@ -17,7 +17,7 @@ class CheesesController < ApplicationController
   def create
     @cheese = Cheese.new(cheese_params)
     if @cheese.save
-      redirect_to 'cheese#index'
+      redirect_to @cheese
     else
       render :new
     end
