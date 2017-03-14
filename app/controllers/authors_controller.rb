@@ -19,6 +19,8 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)
     if @author.save
+      UserMailer.signup(@author).deliver
+      session[:author_id] = @author.id
       redirect_to @author
     else
       render :new
