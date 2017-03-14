@@ -2,7 +2,7 @@ class CheesesController < ApplicationController
 
   before_action :cheeses_load, :find_cheese
 
-  skip_before_action :find_cheese, only: [:new]
+  skip_before_action :find_cheese, only: [:new, :index, :create]
 
   def index
   end
