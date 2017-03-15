@@ -16,6 +16,7 @@ class CheesesController < ApplicationController
 
   def create
     @cheese = Cheese.new(cheese_params)
+    @cheese.author = current_author
     if @cheese.save
       redirect_to @cheese
     else
