@@ -7,8 +7,8 @@ class SessionsController < ApplicationController
   def create
 	  @author = Author.find_by(name: params[:session][:author])
 	  if @author && @author.authenticate(params[:session][:password])
-		  session[:user_id] = @user.id
-			flash[:success] = "Welcome, #{@user.name}."
+		  session[:author_id] = @author.id
+			flash[:success] = "Welcome, #{@author.name}."
 	    redirect_to :root
 	  else
 		  flash[:danger] = "Incorrect credentials. Please try again."

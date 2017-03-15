@@ -41,7 +41,7 @@ class AuthorsController < ApplicationController
   private
 
   def author_params
-    params.require(:author).permit(:name, :bio, :avatar)
+    params.require(:author).permit(:name, :bio, :avatar, :password)
   end
 
   def cheese_bar
