@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @cheeses = Cheese.all
 	  @author = Author.find_by(name: params[:session][:author])
 	  if @author && @author.authenticate(params[:session][:password])
 		  session[:user_id] = @user.id

@@ -68,6 +68,15 @@
         </div>
 
         <div class="container">
+          <% if flash.any? %>
+            <% flash.each do |klass, message| %>
+            <div class="alert alert-<%= klass %>" role="alert">
+              <p>
+                  <%= message %>
+              </p>
+            </div>
+            <% end %>
+          <% end %>
 
             <%= yield %>
 
