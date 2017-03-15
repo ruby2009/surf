@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-	  @author = Author.find_by(name: params[:session][:author])
+	  @author = Author.find_by(author: params[:session][:author])
 	  if @author && @author.authenticate(params[:session][:password])
 		  session[:author_id] = @author.id
 			flash[:success] = "Welcome, #{@author.name}."
