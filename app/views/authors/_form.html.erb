@@ -1,34 +1,9 @@
-<% if @author.errors.any? %>
-  <div class="bg-danger col-xs-12">
-    <ul class="list-unstyled">
-      <% @author.errors.full_messages.each do |message| %>
-        <li>
-          <%= message %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= simple_form_for @author do |f| %>
 
-<%= form_for @author do |f| %>
-
-  <div>
-    <%=f.label :name %>
-    <%=f.text_field :name %>
-  </div>
-
-  <div>
-    <%=f.label :bio %>
-    <%=f.text_area :bio %>
-  </div>
-
-  <div>
-    <%= f.label :avatar %>
-    <%= f.text_field :avatar %>
-  </div>
-
-  <div>
-    <%= f.submit class: "btn btn-primary" %>
-  </div>
+  <%= f.input :name %>
+  <%= f.input :password %>
+  <%= f.input :bio %>
+  <%= f.input :avatar %>
+  <%= f.button :submit, class: "btn btn-primary"%>
 
 <% end %>

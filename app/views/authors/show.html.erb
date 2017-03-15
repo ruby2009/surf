@@ -4,3 +4,6 @@
 </div>
 
   <%= simple_format @author.bio %>
+  <% if current_author == @author %>
+    <%= link_to "Edit Author", edit_author_path(@author), class: "btn btn-primary" %>
+  <% end %>

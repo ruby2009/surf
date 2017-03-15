@@ -1,39 +1,8 @@
-<% if @cheese.errors.any? %>
-  <div class="bg-danger col-xs-12">
-    <ul class="list-unstyled">
-      <% @cheese.errors.full_messages.each do |message| %>
-        <li>
-          <%= message %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= simple_form_for @cheese do |f| %>
 
-<%= form_for @cheese do |f| %>
-
-  <div>
-    <%=f.label :name %>
-    <%=f.text_field :name %>
-  </div>
-
-  <div>
-    <%=f.label :description %>
-    <%=f.text_area :description %>
-  </div>
-
-  <div>
-    <%= f.label :picture %>
-    <%= f.text_field :picture %>
-  </div>
-
-  <div>
-    <%= f.label :author_id %>
-    <%= f.select :author_id, Author.all.collect{|a| [a.name, a.id]} %>
-  </div>
-
-  <div>
-    <%= f.submit class: "btn btn-primary" %>
-  </div>
+  <%= f.input :name %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :picture %>
+  <%= f.button :submit, class: "btn btn-primary"%>
 
 <% end %>
