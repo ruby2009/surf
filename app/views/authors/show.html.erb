@@ -4,5 +4,6 @@
 </div>
 
   <%= simple_format @author.bio %>
-
-  <%= link_to "Edit Author", edit_author_path(@author), class: "btn btn-primary" %>
+  <% if cheese.is_owner? current_author %>
+    <%= link_to "Edit Author", edit_author_path(@author), class: "btn btn-primary" %>
+  <% end %>
