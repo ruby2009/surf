@@ -4,6 +4,10 @@ class AuthorsController < ApplicationController
 
   before_action :find_author, only: [:show, :edit, :update]
 
+  before_action :require_author, only: [:edit, :update]
+
+  before_action :require_self, only: [:edit, :update]
+
   def index
     @authors = Author.all
   end
