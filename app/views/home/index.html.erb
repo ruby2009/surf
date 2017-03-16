@@ -56,6 +56,22 @@
 
                 <%= simple_format @cheese.author.bio %>
 
+                <% if @cheese.cheese_photo? %>
+                  <div class="media-right photo">
+                    <%= image_tag @cheese.cheese_photo.versions[:standard].url, class: "img-responsive", alt: @cheese.description %>
+                  </div>
+                  <% elsif %>
+                  <div class="media-right photo">
+                    <%= image_tag @cheese.picture, alt: @cheese.body %>
+                  </div>
+                  <% else %>
+                    <div class="media-right">
+                    <p>
+                      No photo.
+                    </p>
+                    </div>
+                  <% end %>
+
             </div>
         </div>
     </div>
