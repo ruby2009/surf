@@ -89,7 +89,11 @@
                     <% @cheeses.take(4).each do |cheese| %>
                     <div class="col-md-3 col-xs-6">
                         <%= link_to cheese, class: "btn" do %>
-                        <%= image_tag cheese.picture, class: "img-responsive center-block" %>
+                        <% if cheese.picture? %>
+                          <%= image_tag cheese.picture, class: "img-responsive center-block" %>
+                        <% else %>
+                          <%= image_tag cheese.cheese_photo.versions[:standard], class: "img-responsive center-block" %>
+                      <% end %>
                         <h3><%=simple_format cheese.name %></h3>
                         <% end %>
 

@@ -24,6 +24,10 @@ gem 'faker'
 gem 'bootstrap-sass'
 gem 'sendgrid-ruby'
 gem 'simple_form'
+gem 'rails_12factor', group: :production
+gem 'carrierwave'
+gem "figaro"
+gem 'cloudinary'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
