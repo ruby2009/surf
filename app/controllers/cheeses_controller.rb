@@ -44,7 +44,7 @@ class CheesesController < ApplicationController
   private
 
   def cheese_params
-    params.require(:cheese).permit(:name, :description, :picture, :author_id)
+    params.require(:cheese).permit(:name, :description, :picture, :author_id, :cheese_photo)
   end
 
   def cheeses_load
@@ -54,5 +54,7 @@ class CheesesController < ApplicationController
   def find_cheese
     @cheese = Cheese.find(params[:id])
   end
+
+
 
 end
